@@ -20,6 +20,21 @@ import pandas as pd
 import streamlit as st
 from streamlit.hello.utils import show_code
 
+st.set_page_config(
+        page_title="Sales Dashboard",
+        page_icon=":bar_chart:")
+
+st.markdown(
+        """
+        This is a prototype dashboard to demonstrate the concept of Streamlit for CDP purposes.
+        
+
+        The data is from an open-source.
+        
+        
+        The data used is a sample data from Kaggle.
+        """
+    )
 
 github_csv_url = 'https://raw.githubusercontent.com/joinnanais/Elemis/main/Sample%20-%20Superstore.csv'
 df = pd.read_csv(github_csv_url, encoding='latin1')
