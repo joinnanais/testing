@@ -47,8 +47,8 @@ data = pd.read_csv(github_csv_url, encoding='latin1')
 df = pd.DataFrame(data)
 
 # Calculate average sales and profit
-average_sales = df['Sales'].mean()
-average_profit = df['Profit'].mean()
+average_sales = round(df['Sales'].mean(), 2)
+average_profit = round(df['Profit'].mean(), 2)
 
 # Display KPIs
 st.header('Key Performance Indicators (KPIs)')
