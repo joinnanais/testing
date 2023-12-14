@@ -121,7 +121,7 @@ region_filter = st.sidebar.multiselect(
 product_filter = st.sidebar.multiselect(
     "Select Product Name", 
     options=df['Product Name'].unique(), 
-    default=df['Product Name'].unique()
+    default=[]
 )
 
 # Select Segment 
