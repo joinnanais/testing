@@ -156,21 +156,3 @@ filtered_df = df[(df['Category'].isin(category_filter)) &
 st.subheader("Filtered Data")
 st.write(filtered_df)
 
-# Plot a bar graph 
-df['Month'] = df['Order Date'].dt.to_period('M')
-profit_by_month = df.groupby('Month')['Profit'].sum()
-
-# Plotting
-st.title('Profit by Month')
-
-# Using Seaborn for better visualization
-plt.figure(figsize=(10, 6))
-sns.barplot(x=profit_by_month.index.astype(str), y=profit_by_month.values)
-plt.xlabel('Month')
-plt.ylabel('Profit')
-plt.title('Profit by Month')
-st.pyplot()
-
-# Display the loaded data
-st.header('Superstore Data Overview')
-st.dataframe(df)
