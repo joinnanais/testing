@@ -50,13 +50,21 @@ df = pd.DataFrame(data)
 average_sales = round(df['Sales'].mean(), 2)
 average_profit = round(df['Profit'].mean(), 2)
 
-# Display KPIs
-st.header('Key Performance Indicators (KPIs)')
-st.subheader('Average Sales:')
-st.metric(label='$', value=average_sales, delta=None)
+# Display KPIs side by side
+st.title('Key Performance Indicators (KPIs)')
 
-st.subheader('Average Profit:')
-st.metric(label='$', value=average_profit, delta=None)
+# Create a two-column layout
+col1, col2 = st.columns(2)
+
+# Display Average Sales in the first column
+with col1:
+    st.subheader('Average Sales:')
+    st.metric(label='$', value=average_sales, delta=None)
+
+# Display Average Profit in the second column
+with col2:
+    st.subheader('Average Profit:')
+    st.metric(label='$', value=average_profit, delta=None)
 
 st.sidebar.header("Filters")
 
