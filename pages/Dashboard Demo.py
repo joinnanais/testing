@@ -17,7 +17,6 @@ import pandas as pd
 import streamlit as st
 from streamlit.hello.utils import show_code
 from urllib.error import URLError
-import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 
