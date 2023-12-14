@@ -91,16 +91,32 @@ sub_category_filter = st.sidebar.multiselect(
 )
 
 # Select city filter
-city_filter = st.sidebar.multiselect("Select City", df['City'].unique(), df['City'].unique())
+city_filter = st.sidebar.multiselect(
+    "Select City", 
+    options=df['City'].unique(), 
+    default=[]
+)
 
 # Select Region
-region_filter = st.sidebar.multiselect("Select Region", df['Region'].unique(), df['Region'].unique())
+region_filter = st.sidebar.multiselect(
+    "Select Region", 
+    options=df['Region'].unique(), 
+    default=[]
+)
 
 # Select Product Name
-product_filter = st.sidebar.multiselect("Select Product Name", df['Product Name'].unique(), df['Product Name'].unique())
+product_filter = st.sidebar.multiselect(
+    "Select Product Name", 
+    options=df['Product Name'].unique(), 
+    default=[]
+)
 
 # Select Segment 
-segment_filter = st.sidebar.multiselect("Select Segment", df['Segment'].unique(), df['Segment'].unique())
+segment_filter = st.sidebar.multiselect(
+    "Select Segment", 
+    options=df['Segment'].unique(), 
+    default=[]
+)
 
 # Date Filter
 # Date range slider
