@@ -73,6 +73,13 @@ with col3:
 
 st.sidebar.header("Filters")
 
+# Add a slider for discount
+st.header('Discount Slider')
+discount_range = st.slider('Select Discount Range', min_value=0.0, max_value=1.0, step=0.01, value=(0.0, 0.2))
+
+# Filter DataFrame based on selected discount range
+filtered_df = df[(df['Discount'] >= discount_range[0]) & (df['Discount'] <= discount_range[1])]
+
 # Select category filter
 category_filter = st.sidebar.multiselect("Select Category", df['Category'].unique(), df['Category'].unique())
 
