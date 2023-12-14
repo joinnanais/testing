@@ -153,3 +153,19 @@ filtered_df = df[(df['Category'].isin(category_filter)) &
 st.subheader("Filtered Data")
 st.write(filtered_df)
 
+# Calculate total sales for each product
+best_sellers = df.groupby('Product Name')['Sales'].sum().reset_index()
+
+# Find the best-selling product
+best_selling_product = best_sellers.loc[best_sellers['Sales'].idxmax()]
+
+# Display the best-selling product
+st.title('Best Selling Product')
+st.subheader('Product Name:')
+st.write(best_selling_product['Product Name'])
+st.subheader('Total Sales:')
+st.write('${:,.2f}'.format(best_selling_product['Sales']))
+
+# Display the loaded data
+st.header('Superstore Data Overview')
+st.dataframe(df)
