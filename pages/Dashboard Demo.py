@@ -99,3 +99,14 @@ filtered_df = df[(df['Category'].isin(category_filter)) &
 st.subheader("Filtered Data")
 st.write(filtered_df)
 
+# Calculate average sales and profit
+average_sales = df['Sales'].mean()
+average_profit = df['Profit'].mean()
+
+# Display KPIs
+st.header('Key Performance Indicators (KPIs)')
+st.subheader('Average Sales:')
+st.metric(label='$', value=average_sales, delta=None)
+
+st.subheader('Average Profit:')
+st.metric(label='$', value=average_profit, delta=None)
