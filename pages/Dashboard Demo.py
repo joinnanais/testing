@@ -77,9 +77,6 @@ st.sidebar.header("Filters")
 st.header('Discount Slider')
 discount_range = st.slider('Select Discount Range', min_value=0.0, max_value=1.0, step=0.01, value=(0.0, 0.2))
 
-# Filter DataFrame based on selected discount range
-filtered_df = df[(df['Discount'] >= discount_range[0]) & (df['Discount'] <= discount_range[1])]
-
 # Select category filter
 category_filter = st.sidebar.multiselect("Select Category", df['Category'].unique(), df['Category'].unique())
 
@@ -124,7 +121,9 @@ filtered_df = df[(df['Category'].isin(category_filter)) &
                  (df['Product Name'].isin(product_filter)) &
                  (df['Segment'].isin(segment_filter)) &
                  (df['Order Date'] >= pd.to_datetime(start_date)) & 
-                 (df['Order Date'] <= pd.to_datetime(end_date))
+                 (df['Order Date'] <= pd.to_datetime(end_date)) &
+                 (df['Discount'] >= discount_range[0]) 
+                 & (df['Discount'] <= discount_range[1])
                  ] 
 
 # Display the filtered dataframe
