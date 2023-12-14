@@ -81,7 +81,14 @@ discount_range = st.slider('Select Discount Range', min_value=0.0, max_value=1.0
 category_filter = st.sidebar.multiselect("Select Category", df['Category'].unique(), df['Category'].unique())
 
 # Select sub-category filter
-sub_category_filter = st.sidebar.multiselect("Select Sub-Category", df['Sub-Category'].unique(), df['Sub-Category'].unique())
+#sub_category_filter = st.sidebar.multiselect("Select Sub-Category", df['Sub-Category'].unique(), df['Sub-Category'].unique())
+
+# Select sub-category filter with default value as empty
+sub_category_filter = st.sidebar.multiselect(
+    "Select Sub-Category",
+    options=df['Sub-Category'].unique(),
+    default=[]  # Set default value as an empty list
+)
 
 # Select city filter
 city_filter = st.sidebar.multiselect("Select City", df['City'].unique(), df['City'].unique())
