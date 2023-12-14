@@ -72,9 +72,10 @@ segment_filter = st.sidebar.multiselect("Select Segment", df['Segment'].unique()
 
 # Convert 'Order Date' to datetime
 df["Order Date"] = pd.to_datetime(df["Order Date"])
+df["Ship Date"] = pd.to_datetime(df["Ship Date"])
 
 # Streamlit app
-st.title('Date Filter Example')
+st.title('Filter by Order Date')
 
 # Set default values within the range of the data
 default_start_date = df['Order Date'].min().date()
