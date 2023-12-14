@@ -49,7 +49,7 @@ df = pd.DataFrame(data)
 # Calculate average sales and profit
 average_sales = round(df['Sales'].mean(), 2)
 average_profit = round(df['Profit'].mean(), 2)
-average_quantity = round(df['Quantity'].mean(), 2)
+average_quantity = round(df['Quantity'].mean(), 0)
 
 # Display KPIs side by side
 st.title('Key Performance Indicators (KPIs)')
@@ -69,7 +69,7 @@ with col2:
 
 with col3:
     st.subheader('Average Quantity of Sales:')
-    st.metric(label='$', value=average_quantity, delta=None)
+    st.metric(label='X', value=average_quantity, delta=None)
 
 
 st.sidebar.header("Filters")
