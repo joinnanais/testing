@@ -150,6 +150,8 @@ default_end_date = df['Order Date'].max().date()
 start_date = st.date_input('Start Date', default_start_date, min_value=df['Order Date'].min().date(), max_value=df['Order Date'].max().date())
 end_date = st.date_input('End Date', default_end_date, min_value=df['Order Date'].min().date(), max_value=df['Order Date'].max().date())
 
+selected_data = st.sidebar.dataframe(df)
+
 filtered_df = df[(df['Category'].isin(category_filter)) & 
                  (df['Sub-Category'].isin(sub_category_filter)) &
                  (df['City'].isin(city_filter)) &
