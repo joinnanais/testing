@@ -121,7 +121,7 @@ region_filter = st.sidebar.multiselect(
 product_filter = st.sidebar.multiselect(
     "Select Product Name", 
     options=df['Product Name'].unique(), 
-    default=[]
+    default=df['Product Name'].unique()
 )
 
 # Select Segment 
@@ -162,8 +162,6 @@ filtered_df = df[(df['Category'].isin(category_filter)) &
                  (df['Discount'] >= discount_range[0]) 
                  & (df['Discount'] <= discount_range[1])
                  ] 
-
-st.dataframe(df)
 
 # Display the filtered dataframe
 st.subheader("Filtered Data")
